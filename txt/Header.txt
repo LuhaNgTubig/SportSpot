@@ -1,0 +1,77 @@
+<style>
+header {
+	    display: flex;
+   	    align-items: center; 
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+        }
+
+header h1 {
+            margin: 0;
+	    font-size: 24px;
+        }
+
+/* Left side after SPORTSPOT */
+.left-section {
+            display: flex;
+            align-items: center;
+            gap: 30px; 
+        }
+
+        /* Navigation List Styling */
+.nav-links {
+            display: flex;
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+            gap: 30px; 
+        }
+
+        /* Individual Links Styling */
+.nav-links a {
+            color: black;
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+.nav-links a:hover {
+            text-decoration: underline; /* Adds an underline when hovering */
+        }
+body {
+	margin: 0;
+    	padding: 0;
+    	overflow: hidden; /* Double-ensures no scroll wheel inside the document */
+}
+
+/* Ensure your actual header element fits comfortably within your object height */
+header {
+    	display: flex;
+    	align-items: center;
+    	justify-content: space-between;
+    	height: 100%; /* Makes the header fill the object height exactly */
+    	padding: 0 20px;
+    	box-sizing: border-box;
+}
+</style>
+
+<header>
+	   	<div class="left-section">
+           		 <h1>SPORTSPOT</h1>
+            			<nav>
+                			<ul class="nav-links">
+                   				<li><a href="index.html" target="_top">Home</a></li>
+                    				<li><a href="Categories.html" target="_top">Categories</a></li>
+                    				<li><a href="#">Browse</a></li>	
+               				</ul>
+            			</nav>
+        	</div>
+
+		
+		<form action="/search" method="GET" role="search">
+ 			 <label for="site-search" class="visually-hidden">Search the site:</label>
+ 			 <input type="search" id="site-search" name="q" placeholder="Search..." required>
+ 			 <button type="submit">Search</button>
+		</form>
+</header>

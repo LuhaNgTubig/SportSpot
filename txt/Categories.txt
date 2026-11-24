@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Home Page/Categories</title>
+	
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<object class="shared-header" data="header.html" type="text/html"></object>
+
+	<section class="sport-type">
+    		<!-- Top Row: Section Heading and Button -->
+    		<div class="section-header">
+        		<h2 class="section-title">📖 PickleBall</h2>
+        		<button class="#">Browse PickleBall Courts</button>
+    		</div>
+
+
+    		<!-- The Horizontal Scrollable Row -->
+    		<div class="slider-container">
+        		<div class="sport-card">
+            			<img src="placeholder.png" alt="Court Cover">
+            			<h3>The Newbie Civil Servant...</h3>
+        		</div>
+    		</div>
+	</section>
+
+</body>
+</html>

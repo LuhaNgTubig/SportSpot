@@ -1,0 +1,65 @@
+/* This turns the header into a flexible row */
+header {
+	    display: flex;
+   	    align-items: center; 
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+        }
+
+header h1 {
+            margin: 0;
+	    font-size: 24px;
+        }
+
+/* Left side after SPORTSPOT */
+.left-section {
+            display: flex;
+            align-items: center;
+            gap: 30px; 
+        }
+
+        /* Navigation List Styling */
+.nav-links {
+            display: flex;
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+            gap: 30px; 
+        }
+
+        /* Individual Links Styling */
+.nav-links a {
+            color: black;
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+.nav-links a:hover {
+            text-decoration: underline; /* Adds an underline when hovering */
+        }
+
+object.shared-header {
+    display: block;      /* Changes it from inline to block layout */
+    width: 100vw;        /* Uses 100% of the viewport/screen width */
+    height: 60px;        /* Set this to match the actual height of your header contents */
+    border: none;        /* Removes any accidental default borders */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+   
+}
+
+/* Optional: Ensure your main page body doesn't have default margins causing white space gaps */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+
+
+}

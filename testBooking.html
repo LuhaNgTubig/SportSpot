@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+	
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		/* Container Box styling - MADE BIGGER */
+		.profile-card {
+			border: 0px solid #000000; /* Thicker borders for a larger scale layout */
+			width: 95%;               /* Stretches wide on tablet and medium devices */
+			max-width: 1000px;        /* EXPANDED: Changed from 650px to 1000px for a massive desktop view */
+			margin: 40px auto;        /* Increased spacing above and below the card */
+			font-family: sans-serif;
+			box-sizing: border-box; 
+			font-size: 1.25rem;       /* SCALED UP: Sets a base font size that is 25% larger than default */
+		}
+
+		/* Base resets to make sure images don't overflow */
+		.profile-card *, .profile-card *::before, .profile-card *::after {
+			box-sizing: border-box;
+		}
+
+		/* Horizontal line under NAME */
+		.card-header {
+			border-bottom: 3px solid #000000;
+			padding: 20px 25px;       /* Increased padding inside the top header */
+		}
+
+		/* Enlarged Header Text */
+		.card-header h2 {
+			margin: 0;
+			font-size: 2.5rem;        /* Made the main title significantly bigger */
+		}
+
+		/* Main Split Layout Container */
+		.card-body {
+			display: grid;
+			grid-template-columns: 35% 65%; /* Retains column ratio, but spreads out wider */
+		}
+
+		/* Left Column Styling */
+		.left-column {
+			border-right: 3px solid #000000; 
+			display: flex;
+			flex-direction: column;
+		}
+
+		/* Horizontal line under IMG */
+		.image-box {
+			border-bottom: 3px solid #000000;
+			padding: 25px;            /* More breathing room for the image area */
+			text-align: center;
+		}
+
+		/* Responsive Image scaling */
+		.image-box img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.details-box {
+			padding: 25px;            
+			line-height: 1.6;         
+		}
+
+		/* Right column layout stacking Description over Sched */
+		.right-column {
+			display: flex;
+			flex-direction: column;
+			padding: 25px;          
+			gap: 25px;                
+		}
+
+		/*BOOKING TABLE STYLES*/
+		.booking-container {
+			width: 100%;
+			margin-top: 15px;
+		}
+		
+		.table-wrapper {
+			max-height: 400px; 
+			overflow-y: auto;
+			border: 2px solid #000000;
+			border-radius: 6px;
+			margin-bottom: 15px;
+		}
+
+		.booking-table {
+			width: 100%;
+			border-collapse: collapse;
+			background: #fff;
+			font-size: 1.1rem;
+		}
+
+		.booking-table th, .booking-table td {
+			padding: 10px 15px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.booking-table th {
+			background-color: #333;
+			color: white;
+			position: sticky;
+			top: 0;
+			z-index: 1;
+		}
+
+		.status-badge {
+			font-weight: bold;
+			padding: 6px 12px;
+			border-radius: 4px;
+			text-align: center;
+			display: inline-block;
+			min-width: 110px;
+			user-select: none;
+		}
+
+		.status-available {
+			background-color: #D4EDDA;
+			color: #155724;
+			cursor: pointer;
+			border: 1px solid #c3e6cb;
+		}
+
+		.status-available:hover {
+			background-color: #c3e6cb;
+		}
+
+		.status-selected {
+			background-color: #FFF3CD !important;
+			color: #856404;
+			border: 1px solid #FFEBAA !important;
+		}
+
+		.status-unavailable {
+			background-color: #F8D7DA;
+			color: #721C24;
+			cursor: not-allowed;
+			border: 1px solid #f5c6cb;
+		}
+
+		.btn-box {
+			text-align: right;
+		}
+
+		.book-btn {
+			padding: 12px 24px;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			font-size: 1.1rem;
+			font-weight: bold;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+
+		.book-btn:hover {
+			background-color: #218838;
+		}
+
+		.book-btn:disabled {
+			background-color: #ccc;
+			cursor: not-allowed;
+		}
+
+		@media (max-width: 650px) {
+			.card-body {
+				grid-template-columns: 1fr; 
+			}
+
+			.left-column {
+				border-right: none;          
+				border-bottom: 3px solid #000; 
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<object class="shared-header" data="header.html" type="text/html"></object>
+
+	<main>
+		<section class="profile-card">
+			<header class="card-header">
+				<h2>Norgam's Pickle Ball Court</h2>
+			</header>
+
+			<!-- Main Split Layout Container -->
+			<div class="card-body">
+				<!-- Left Column -->
+				<aside class="left-column">
+					<div class="image-box">
+						<!-- Replace with your actual image source -->
+						<img src="placeholder.png" alt="Profile Image">
+					</div>
+					<div class="details-box">
+						<p>Price Rate PHP/hour</p>
+						<p>etc.</p>
+					</div>
+				</aside>
+
+				<!-- Right Column -->
+				<main class="right-column">
+					<div class="description-box">
+						<h3>Description</h3>
+						<p>Court Description yes yes</p>
+					</div>
+					<div class="schedule-box">
+						<h3>Sched</h3>
+						<!-- Dynamic Booking System Embedded Here -->
+						<div class="inner-sched">
+							<div class="booking-container">
+								<div class="table-wrapper">
+									<table class="booking-table" id="courtSchedule">
+										<thead>
+											<tr>
+												<th>Time Slot</th>
+												<th>Availability</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- JavaScript dynamic row generation -->
+										</tbody>
+									</table>
+								</div>
+								<div class="btn-box">
+									<button class="book-btn" id="confirmBookingBtn" disabled>Confirm Selected Slots</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</section>
+	</main>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const tableBody = document.querySelector('#courtSchedule tbody');
+			const bookBtn = document.getElementById('confirmBookingBtn');
+			let selectedSlots = [];
+
+			// Converts minutes from midnight into AM/PM string formats
+			function formatTime(minutes) {
+				let hours = Math.floor(minutes / 60);
+				const mins = minutes % 60;
+				const ampm = hours >= 12 ? 'PM' : 'AM';
+				hours = hours % 12;
+				hours = hours ? hours : 12; 
+				const strMins = mins < 10 ? '0' + mins : mins;
+				return `${hours}:${strMins} ${ampm}`;
+			}
+
+			// Generate intervals: 7:00 AM (420 mins) to 11:00 PM (1380 mins)
+			const startMins = 7 * 60;
+			const endMins = 23 * 60;
+
+			for (let time = startMins; time < endMins; time += 30) {
+				const startTimeStr = formatTime(time);
+				const endTimeStr = formatTime(time + 30);
+				const timeRange = `${startTimeStr} - ${endTimeStr}`;
+
+				const row = document.createElement('tr');
+				
+				const timeCell = document.createElement('td');
+				timeCell.textContent = timeRange;
+				row.appendChild(timeCell);
+
+				const statusCell = document.createElement('td');
+				const statusBadge = document.createElement('span');
+				statusBadge.textContent = 'Available';
+				statusBadge.classList.add('status-badge', 'status-available');
+				
+				// Click Event to pick/unpick multiple items
+				statusBadge.addEventListener('click', () => {
+					if (statusBadge.classList.contains('status-available')) {
+						statusBadge.classList.toggle('status-selected');
+						
+						if (statusBadge.classList.contains('status-selected')) {
+							statusBadge.textContent = 'Selected';
+							selectedSlots.push({ badge: statusBadge, range: timeRange });
+						} else {
+							statusBadge.textContent = 'Available';
+							selectedSlots = selectedSlots.filter(item => item.badge !== statusBadge);
+						}
+						
+						// Enable action item button if an index exists
+						bookBtn.disabled = selectedSlots.length === 0;
+					}
+				});
+
+				statusCell.appendChild(statusBadge);
+				row.appendChild(statusCell);
+				tableBody.appendChild(row);
+			}
+
+			// Modal Box Pop-up Handling
+			bookBtn.addEventListener('click', () => {
+				if (selectedSlots.length === 0) return;
+
+				const listText = selectedSlots.map(item => `- ${item.range}`).join('\n');
+				const confirmed = confirm(`Confirm your booking for:\n\n${listText}`);
+
+				if (confirmed) {
+					selectedSlots.forEach(item => {
+						item.badge.classList.remove('status-selected', 'status-available');
+						item.badge.classList.add('status-unavailable');
+						item.badge.textContent = 'Unavailable';
+					});
+					
+					// Reset the memory array and update visual actions
+					selectedSlots = [];
+					bookBtn.disabled = true;
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const headerContainer = document.getElementById("header-container");
+    
+    if (headerContainer) {
+        fetch("C:\Users\Jude\Desktop\CSC 106\Header.html")
+            .then(response => response.text())
+            .then(data => {
+                headerContainer.innerHTML = data;
+            })
+            .catch(error => console.error("Error loading header:", error));
+    }
+});
